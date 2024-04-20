@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyBsnllO-Nv_9G3Xs0K-e4dzGpwr1l8vYMI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>695250646575</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>lukastimusk.barski1</string>
+	<key>PROJECT_ID</key>
+	<string>barski-8cb7f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>barski-8cb7f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:695250646575:ios:ee7ab0e658071105a7f8da</string>
+    
+    
+    <key>UIApplicationSceneManifest</key>
+    <dict>
+        <key>UISceneConfigurations</key>
+        <dict>
+            <key>UIWindowSceneSessionRoleApplication</key>
+            <array>
+                <dict>
+                    <key>UISceneConfigurationName</key>
+                    <string>Default Configuration</string>
+                    <!-- Add other configuration keys as needed -->
+                </dict>
+            </array>
+        </dict>
+    </dict>
+    
+    
+</dict>
+</plist>
