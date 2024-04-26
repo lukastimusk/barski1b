@@ -10,6 +10,9 @@ import SwiftUI
 struct ProfileView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     @Environment(\.colorScheme) var colorScheme
+    @State private var isBugReportPresented = false
+    @ObservedObject var db2 = DatabaseConnector()
+    let dbConnector = DatabaseConnector()
 
     
     var body: some View {
@@ -69,33 +72,36 @@ struct ProfileView: View {
                 Section("Account"){
                     
                     
-                        Button {
-                            viewModel.signOut()
-                        } label: {
-                            SettingsRowView(imagename: "arrow.left.circle.fill", title: "Sign Out", tintColor: .red)
-
-                        }
+                    Button {
+                        viewModel.signOut()
+                    } label: {
+                        SettingsRowView(imagename: "arrow.left.circle.fill", title: "Sign Out", tintColor: .red)
                         
-                        
-                        
-//                        Button {
-//                            print("Delete account")
-//                        } label: {
-//                            SettingsRowView(imagename: "x.circle.fill",
-//                                            title: "Delete Account",
-//                                            tintColor: .red)
-//
-//                        }
+                    }
                     
+                }
+                
+                Section("Contact"){
+                    
+                    
+                    Button {
+                        isBugReportPresented.toggle()
+                    } label: {
+                        SettingsRowView(imagename: "text.bubble", title: "Report a Bug", tintColor: .red)
+                        
+                    }
+                    .sheet(isPresented: $isBugReportPresented) {
+                        ReportABug(bugModalPresented: $isBugReportPresented)
+                        .presentationDetents([.fraction(0.35)])
+                        
+                        
+                    }
                     
                 }
                 
                 
             }
             .padding(.bottom, 20)
-            //.background(colorScheme == .dark ? Color(.systemGray) : Color(UIColor.systemBackground))
-
-
             
         }
     }

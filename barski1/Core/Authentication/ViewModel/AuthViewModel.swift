@@ -52,21 +52,15 @@ class AuthViewModel: ObservableObject {
             await fetchUser()
             self.isloggedin = true
             
-            //ADDED THE FOLLOWING
-//            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-//               let window = windowScene.windows.first {
-//                window.rootViewController = UIHostingController(
-//                    rootView: ProfileView().environmentObject(self)
-//                )
-//                window.makeKeyAndVisible()
-//
-//            }
-            //END HERE
-            
-            
         } catch {
             print("Debug, failed to log in with error \(error.localizedDescription)")
-            showAlert(message: error.localizedDescription)
+            
+            if error.localizedDescription == "The supplied auth credential is malformed or has expired." {
+                showAlert(message: "Invalid Username or Password")
+            } else {
+                showAlert(message: error.localizedDescription)
+                
+            }
         }
         
         if let userSession2 = userSession {

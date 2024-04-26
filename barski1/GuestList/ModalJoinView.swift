@@ -9,12 +9,23 @@
 
 import SwiftUI
 
+
 struct ModalJoinView: View {
     
     // *******************************************
     // ************* OUR VARIABLES ***************
     // *******************************************
     
+    // OTHER VIEWS
+    @State private var authViewski = AuthViewModel()
+    @EnvironmentObject var viewModel: AuthViewModel
+    @ObservedObject var db2 = DatabaseConnector()
+    let dbConnector = DatabaseConnector()
+    @StateObject var networkManager = NetworkManager()
+    @StateObject private var networkMonitor = NetworkMonitor()
+
+    
+    // BAR STATS
     @State private var bar: GitHubBar?
     @State var FBBarjoin: String
     @State var FBMaxBarCapacity: Int
@@ -30,22 +41,20 @@ struct ModalJoinView: View {
     @State private var isPressed = false
     @State private var isPressed2 = false
     @State private var showError = false
-    // @State private var showingJoinAlert: Bool = false
+    
+    // IS AN ALERT PRESENTED
     @State private var activeAlert: ActiveAlert? // Changed from Bool to ActiveAlert
 
-    @State private var authViewski = AuthViewModel()
-    @State private var capacityResult: Int = 300
+    @State private var capacityResult: Int = 0
 
     
-    @EnvironmentObject var viewModel: AuthViewModel
-    @ObservedObject var db2 = DatabaseConnector()
+ 
     
     let defaults = UserDefaults.standard
-    let dbConnector = DatabaseConnector()
     
     
     enum ActiveAlert: Identifiable { // Conform ActiveAlert to Identifiable
-        case joinError, capacityFull
+        case joinError, capacityFull, wifiError
         
         var id: Int { // Provide a unique identifier for each case
             switch self {
@@ -53,6 +62,9 @@ struct ModalJoinView: View {
                 return 0
             case .capacityFull:
                 return 1
+            case .wifiError:
+                return 2
+            
             }
         }
     }
@@ -111,6 +123,8 @@ struct ModalJoinView: View {
                             } else if capacityResult >= FBMaxBarCapacity {
                                 self.activeAlert = .capacityFull // Set activeAlert based on capacity
                                 
+                            } else if networkMonitor.isActive == false {
+                                self.activeAlert = .wifiError // Set activeAlert based on capacity
                             }
                             else {
                                 showingBottomSheet = false
@@ -147,6 +161,8 @@ struct ModalJoinView: View {
                                 return Alert(title: Text("Error: cannot join more than one guest list"))
                             case .capacityFull:
                                 return Alert(title: Text("Error: bar at full capacity"))
+                            case .wifiError:
+                                return Alert(title: Text("Error: No Wifi Connection"))
                             }
                         }
                         

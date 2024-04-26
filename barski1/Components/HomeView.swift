@@ -21,15 +21,7 @@ struct HomeView: View {
     @State private var bar: GitHubBar?
     @Environment(\.colorScheme) var colorScheme
     
-//    init() {
-//
-//        if NetworkMonitor.shared.isConnected {
-//            print("WIFI CONNECTED")
-//        }
-//        else {
-//            print("NOT CONNECTED")
-//        }
-//    }
+
 
 
     var body: some View {
@@ -172,6 +164,29 @@ struct HomeView: View {
             
             Spacer()
         }
+    }
+    
+    func getBar3() async throws -> GitHubBar {
+        let endpoint = "https://lukastimusk.github.io/Barski/bars.json"
+        
+        guard let url = URL(string: endpoint) else { throw GHError.invalidURL}
+        
+        let (data, response) = try await URLSession.shared.data(from: url)
+        
+        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else{
+            throw GHError.invalidResponse
+        }
+        
+        do {
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            return try decoder.decode(GitHubBar.self, from: data)
+        } catch{
+            throw GHError.invalidData
+        }
+        
+        
+                
     }
     
 }

@@ -138,5 +138,21 @@ class DatabaseConnector : ObservableObject {
         
     }
     
+    func reportBug(message: String, UserID: String) {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let todayDateString = dateFormatter.string(from: Date())
+    
+        
+        // date = Date() -> format to string yyy-MM-dd
+        Firestore.firestore().collection("Bugs")
+            .document(todayDateString)
+            .collection(UserID)
+            .document("Bug:")
+            .setData(["bug": message])
+        
+    }
+    
     
 }

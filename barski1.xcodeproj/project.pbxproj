@@ -26,6 +26,7 @@
 		80038B292B5A2E7C00B78244 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 80038B282B5A2E7C00B78244 /* FirebaseStorage */; };
 		80038B2D2B5A2F1A00B78244 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80038B2C2B5A2F1A00B78244 /* AuthViewModel.swift */; };
 		801BEEAD2B6360680090959C /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801BEEAC2B6360680090959C /* NavBar.swift */; };
+		8037CC252BDA0633002E51BB /* ReportABug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8037CC242BDA0633002E51BB /* ReportABug.swift */; };
 		803BD14B2B9B8BBA00658CE2 /* GuestListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803BD14A2B9B8BBA00658CE2 /* GuestListView.swift */; };
 		805BA0022BB0A0E800B8D567 /* DatabaseConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BA0012BB0A0E800B8D567 /* DatabaseConnector.swift */; };
 		80722EB12B75CC2A0047F652 /* YoutubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80722EB02B75CC2A0047F652 /* YoutubeView.swift */; };
@@ -38,6 +39,7 @@
 		80A558C82BA7DFAF00C33D42 /* ModalJoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A558C72BA7DFAF00C33D42 /* ModalJoinView.swift */; };
 		80D69FA12B621C2000245E12 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D69FA02B621C2000245E12 /* HomeView.swift */; };
 		80DF37C82B621C7E003900EF /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DF37C72B621C7E003900EF /* CameraView.swift */; };
+		80E4953A2BD5ED4B00F012D7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E495392BD5ED4A00F012D7 /* NetworkManager.swift */; };
 		80E88D612B69F4D40057D1F1 /* FrankRuhlLibre-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80E88D602B69F4D40057D1F1 /* FrankRuhlLibre-VariableFont_wght.ttf */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,7 @@
 		80038B1D2B5A2B9000B78244 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		80038B2C2B5A2F1A00B78244 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		801BEEAC2B6360680090959C /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
+		8037CC242BDA0633002E51BB /* ReportABug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportABug.swift; sourceTree = "<group>"; };
 		803BD14A2B9B8BBA00658CE2 /* GuestListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestListView.swift; sourceTree = "<group>"; };
 		805BA0012BB0A0E800B8D567 /* DatabaseConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseConnector.swift; sourceTree = "<group>"; };
 		80722EB02B75CC2A0047F652 /* YoutubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeView.swift; sourceTree = "<group>"; };
@@ -69,6 +72,7 @@
 		80A558C72BA7DFAF00C33D42 /* ModalJoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalJoinView.swift; sourceTree = "<group>"; };
 		80D69FA02B621C2000245E12 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		80DF37C72B621C7E003900EF /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		80E495392BD5ED4A00F012D7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		80E88D602B69F4D40057D1F1 /* FrankRuhlLibre-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FrankRuhlLibre-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				80038B172B59CC6700B78244 /* ProfileView.swift */,
+				8037CC242BDA0633002E51BB /* ReportABug.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 			children = (
 				80937F0D2BAA8AC700A641A9 /* PopUpManager.swift */,
 				80937F0F2BABB74100A641A9 /* ButtonAnimation.swift */,
+				80E495392BD5ED4A00F012D7 /* NetworkManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -365,11 +371,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80E4953A2BD5ED4B00F012D7 /* NetworkManager.swift in Sources */,
 				80937F102BABB74100A641A9 /* ButtonAnimation.swift in Sources */,
 				80038B2D2B5A2F1A00B78244 /* AuthViewModel.swift in Sources */,
 				80038B102B58C6B100B78244 /* LoginView.swift in Sources */,
 				80722EB12B75CC2A0047F652 /* YoutubeView.swift in Sources */,
 				80DF37C82B621C7E003900EF /* CameraView.swift in Sources */,
+				8037CC252BDA0633002E51BB /* ReportABug.swift in Sources */,
 				80A558C82BA7DFAF00C33D42 /* ModalJoinView.swift in Sources */,
 				80038B122B58C9A300B78244 /* InputView.swift in Sources */,
 				80937F0E2BAA8AC700A641A9 /* PopUpManager.swift in Sources */,
@@ -524,6 +532,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -554,6 +563,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -596,7 +606,7 @@
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
+				minimumVersion = 10.0.15;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
